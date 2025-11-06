@@ -1,0 +1,635 @@
+/* ============================================
+   Staff Page Styles - Password & Schedule
+   ============================================ */
+
+/* パスワード入力画面 */
+.password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.password-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-large);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.password-box h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.password-box p {
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.password-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.password-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.password-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.password-error {
+    color: #e53e3e;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.password-error.show {
+    display: block;
+}
+
+.content-hidden {
+    display: none;
+}
+
+/* スタッフ専用バッジ */
+.staff-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #ff9a5a 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* 詳細スケジュールテーブル */
+.detailed-schedule {
+    margin-top: 2rem;
+}
+
+.detailed-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 2rem;
+}
+
+.detailed-schedule th {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+    color: #ffffff !important;
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.detailed-schedule td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.detailed-schedule tr:last-child td {
+    border-bottom: none;
+}
+
+/* 行の交互の背景色（ストライプ） */
+.detailed-schedule tbody tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.detailed-schedule tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.detailed-schedule tbody tr:hover {
+    background: #f0f7f4;
+    transition: background 0.2s ease;
+}
+
+.detailed-schedule .time-col {
+    width: 120px;
+    font-weight: bold;
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+.detailed-schedule .time-col br {
+    display: none;
+}
+
+.detailed-schedule .location-col {
+    width: 140px;
+    color: var(--color-text);
+}
+
+.detailed-schedule .activity-col {
+    color: var(--color-text);
+}
+
+.detailed-schedule .note-col {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.day-section {
+    margin-bottom: 3rem;
+}
+
+.day-title {
+    font-size: 1.8rem;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .password-box {
+        padding: 2rem;
+    }
+    
+    /* スケジュールテーブルをカード形式に */
+    .detailed-schedule table {
+        font-size: 0.9rem;
+    }
+    
+    .detailed-schedule thead {
+        display: none;
+    }
+    
+    .detailed-schedule tbody,
+    .detailed-schedule tr {
+        display: block;
+        width: 100%;
+    }
+    
+    .detailed-schedule tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 1rem;
+        background: white;
+        box-shadow: var(--shadow-soft);
+    }
+    
+    .detailed-schedule tr:hover {
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .detailed-schedule td {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+        border: none;
+        text-align: left;
+    }
+    
+    .detailed-schedule td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--color-primary);
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.85rem;
+    }
+    
+    .detailed-schedule .time-col {
+        width: 100%;
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid #e0e0e0;
+        margin-bottom: 0.8rem;
+    }
+    
+    .detailed-schedule .time-col br {
+        display: none;
+    }
+    
+    .detailed-schedule .time-col::before {
+        content: '⏰ 時刻';
+        font-size: 0.9rem;
+        display: block;
+        white-space: normal;
+    }
+    
+    .detailed-schedule .location-col {
+        width: 100%;
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+    
+    .detailed-schedule .location-col br {
+        content: ' ';
+        display: inline;
+    }
+    
+    .detailed-schedule .location-col br::after {
+        content: ' ';
+    }
+    
+    .detailed-schedule .location-col::before {
+        content: '📍 場所（教室）';
+    }
+    
+    .detailed-schedule .activity-col br {
+        content: ' ';
+        display: inline;
+    }
+    
+    .detailed-schedule .activity-col br::after {
+        content: ' ';
+    }
+    
+    .detailed-schedule .activity-col::before {
+        content: '📝 内容';
+    }
+    
+    .detailed-schedule .note-col {
+        padding-top: 0.8rem;
+        border-top: 1px solid #f0f0f0;
+        margin-top: 0.8rem;
+    }
+    
+    .detailed-schedule .note-col::before {
+        content: '👥 担当・備考';
+    }
+}
+
+/* ============================================
+   持ち物リストのスタイル
+   ============================================ */
+
+.staff-items-header {
+    transition: background 0.2s ease;
+}
+
+.staff-items-header:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.staff-items-header:active {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ============================================
+   持ち物チェックリストページのスタイル
+   ============================================ */
+
+.items-category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(135deg, rgba(14, 139, 98, 0.1) 0%, rgba(14, 139, 98, 0.05) 100%);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+}
+
+/* ============================================
+   スタッフページ共通スタイル
+   ============================================ */
+
+/* ヒーローセクションのスタイル（スタッフページ用） */
+.staff-page .hero-title {
+    font-size: 2rem;
+}
+
+.staff-page .hero-subtitle {
+    font-size: 1rem;
+}
+
+/* 情報ボックス共通スタイル */
+.info-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.info-box-title {
+    margin-bottom: 1rem;
+}
+
+.info-box-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-box-list {
+    line-height: 1.8;
+}
+
+.info-box-list.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.info-box-list.with-margin-bottom {
+    margin-bottom: 1rem;
+}
+
+/* 食事情報ボックス */
+.meals-info-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+.meals-info-box .info-box-title {
+    color: var(--color-primary);
+}
+
+.meals-info-box .info-box-subtitle {
+    color: var(--color-primary);
+}
+
+.meals-info-box .info-box-list {
+    color: var(--color-text);
+}
+
+/* 重要事項ボックス */
+.important-info-box {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.important-info-box .info-box-title {
+    color: var(--color-secondary);
+}
+
+.important-info-box .info-box-list {
+    color: var(--color-text);
+}
+
+/* その他注意事項ボックス */
+.other-notes-box {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+
+.other-notes-box .info-box-title {
+    color: #7b1fa2;
+}
+
+.other-notes-box .info-box-list {
+    color: var(--color-text);
+}
+
+/* フッターリンクスタイル */
+.footer-logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* サイドバーナビゲーションのスタイル */
+.sidebar-nav .nav-divider {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar-nav .nav-section-label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    padding-left: 1rem;
+}
+
+/* ネストされたリストスタイル */
+.info-box-list .nested-list {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+/* ============================================
+   MTGページのスタイル
+   ============================================ */
+
+/* MTGセクション */
+.mtg-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.mtg-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.mtg-header:hover {
+    background: linear-gradient(135deg, #0a6d4d 0%, var(--color-primary) 100%);
+}
+
+.mtg-title {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.mtg-toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.mtg-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.mtg-inner {
+    padding: 2rem;
+}
+
+.mtg-subtitle {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.mtg-subtitle:first-child {
+    margin-top: 0;
+}
+
+.mtg-list {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+}
+
+.mtg-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.mtg-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* 役割分担グリッド */
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.role-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid var(--color-primary);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.role-card h4 {
+    color: var(--color-primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.role-card p {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.role-card small {
+    color: var(--color-text-light);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* タイムライン */
+.timeline {
+    margin-top: 1rem;
+}
+
+.timeline-item {
+    display: flex;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-time {
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.timeline-desc {
+    color: var(--color-text);
+    flex: 1;
+}
+
+/* SP版での調整 */
+@media (max-width: 768px) {
+    .items-category {
+        margin-bottom: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .staff-page .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .staff-page .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* MTG SP版 */
+    .mtg-title {
+        font-size: 1.2rem;
+    }
+    
+    .mtg-inner {
+        padding: 1.5rem;
+    }
+    
+    .mtg-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .timeline-time {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-desc {
+        font-size: 0.9rem;
+    }
+}
+
