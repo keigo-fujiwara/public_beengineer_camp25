@@ -761,6 +761,64 @@ a {
 }
 
 /* ============================================
+   健康管理・安全管理
+   ============================================ */
+
+.health-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.health-card h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.health-card p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.hospital-info {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-primary);
+  text-align: center;
+}
+
+.hospital-info h4 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hospital-link {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0a6d4d 100%);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(14, 139, 98, 0.3);
+  margin-top: 0.5rem;
+}
+
+.hospital-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(14, 139, 98, 0.4);
+}
+
+/* ============================================
    お問い合わせ
    ============================================ */
 
@@ -1636,6 +1694,29 @@ a {
   .contact-note {
     margin-top: 0.6rem;
     font-size: 0.8rem;
+  }
+  
+  .health-card {
+    padding: 1.5rem;
+  }
+  
+  .health-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .hospital-info {
+    padding: 1rem;
+  }
+  
+  .hospital-info h4 {
+    font-size: 1.1rem;
+  }
+  
+  .hospital-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
