@@ -200,9 +200,42 @@ function updateTabEmoji(button, isActive) {
     }
 }
 
+/**
+ * 東京・横浜チームの到着スケジュールタブ機能
+ * 3パターンの到着ルートをタブで切り替え
+ */
+function initArrivalTabs() {
+    const tabButtons = document.querySelectorAll('.arrival-tab-btn');
+    const tabContents = document.querySelectorAll('.arrival-content');
+    
+    if (tabButtons.length === 0 || tabContents.length === 0) return;
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-arrival-tab');
+            
+            // すべてのタブボタンとコンテンツからactiveクラスを削除
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // クリックされたタブボタンとそのコンテンツにactiveクラスを追加
+            this.classList.add('active');
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+}
+
 // ページ読み込み時に初期化
 document.addEventListener('DOMContentLoaded', function() {
     initStaffItemsToggle();
     initScheduleTabs();
+    
+    // 東京・横浜チームページの場合のみタブを初期化
+    if (document.querySelector('.arrival-tabs')) {
+        initArrivalTabs();
+    }
 });
 

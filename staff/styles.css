@@ -245,6 +245,302 @@
     margin-bottom: 0;
 }
 
+/* ============================================
+   東京・横浜チーム到着スケジュール
+   ============================================ */
+
+/* 到着時刻タブ */
+.arrival-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.arrival-tab-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.2rem 1.5rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrival-tab-btn:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.arrival-tab-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.arrival-time {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.arrival-tab-btn.active .arrival-time {
+  color: white;
+}
+
+.arrival-label {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.arrival-tab-btn.active .arrival-label {
+  color: white;
+}
+
+/* 到着コンテンツ */
+.arrival-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.arrival-content.active {
+  display: block;
+}
+
+/* ルートサマリー */
+.route-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.summary-value.fare {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+/* ルート詳細 */
+.route-detail {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.route-detail::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  bottom: 2rem;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+}
+
+.route-step {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.route-step:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.step-marker {
+  position: absolute;
+  left: -2.7rem;
+  top: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+.step-marker.start {
+  background: var(--color-primary);
+}
+
+.step-marker.transfer {
+  background: var(--color-secondary);
+}
+
+.step-marker.end {
+  background: #ff6b6b;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step-station {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.step-train {
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.step-time {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.step-fare {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.step-wait {
+  color: #ff9800;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step-note {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f0f7f4;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* 帰宅ルート */
+.return-content {
+  margin-top: 2rem;
+}
+
+.return-notes {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border-left: 4px solid #ff9800;
+}
+
+.return-notes h3 {
+  color: var(--color-secondary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.return-notes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.return-notes li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 152, 0, 0.2);
+  line-height: 1.6;
+}
+
+.return-notes li:last-child {
+  border-bottom: none;
+}
+
+.return-notes strong {
+  color: #ff9800;
+  font-weight: 600;
+}
+
+.schedule-timeline {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-time {
+  font-weight: bold;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.timeline-event {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.notes-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 152, 0, 0.2);
+  line-height: 1.6;
+}
+
+.notes-list li:last-child {
+  border-bottom: none;
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     .password-box {
@@ -519,6 +815,19 @@
     color: rgba(255,255,255,0.6);
     font-size: 0.85rem;
     padding-left: 1rem;
+}
+
+/* アクティブページのメニューハイライト */
+.sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.sidebar-nav a.active:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 /* ネストされたリストスタイル */
