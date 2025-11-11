@@ -90,9 +90,46 @@
                         <p class="guide-note">
                             ※一緒に乗車しますので、降車のタイミングもご案内します。
                         </p>
+                        
+                        <div class="guide-notice-inline">
+                            <p class="guide-notice-item">
+                                <span class="guide-notice-icon">⚠️</span>
+                                <strong>城陽駅周辺にはコンビニがありませんのでご注意ください。</strong>
+                            </p>
+                            <p class="guide-notice-item">
+                                <span class="guide-notice-icon">🍱</span>
+                                <strong>14:00集合後、合宿プログラム開始となりますので、集合時間までの間に昼食を済ませるようお願いします。</strong>
+                            </p>
+                            <p class="guide-notice-contact">
+                                （判断が難しい場合は、各校舎にご連絡ください。）
+                            </p>
+                        </div>
                     </div>
                     <div class="guide-image">
                         <img src="assets/guide/station.jpeg" alt="城陽駅 改札前の待ち合わせ場所" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="line-info-box">
+                    <h3 class="line-info-title">📱 合宿連絡用のLINEアカウント</h3>
+                    <div class="line-info-content">
+                        <div class="line-character line-character-left">
+                            <img src="assets/fav/dot_boy.svg" alt="キャラクター" class="line-character-img">
+                        </div>
+                        <div class="line-qr-section">
+                            <img src="assets/guide/BeEnCamp2025.png" alt="BeEngineer合宿2025 LINE QRコード" class="line-qr-code">
+                            <div class="line-text-section">
+                                <p class="line-account-name">
+                                    <strong>BeEngineer_合宿_2025</strong>
+                                </p>
+                                <p class="line-description">
+                                    合宿関連のご連絡はこちらから送らせていただきます。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line-character line-character-right">
+                            <img src="assets/fav/dot_girl.svg" alt="キャラクター" class="line-character-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -251,6 +288,7 @@
                                 <div class="time-slot">12:00～13:00</div>
                                 <div class="time-slot">13:00～18:00</div>
                                 <div class="time-slot">18:00～21:00</div>
+                                <div class="time-slot">21:00～24:00</div>
                             </td>
                             <td class="schedule-detail schedule-location">
                                 <div class="location-item">各部屋</div>
@@ -260,6 +298,7 @@
                                 <div class="location-item">研修室1～3</div>
                                 <div class="location-item">研修室1～3</div>
                                 <div class="location-item">外・ピラミッド<br>TAKIBI1～4</div>
+                                <div class="location-item">各部屋</div>
                             </td>
                             <td class="schedule-detail">
                                 <div class="activity">🌅 起床</div>
@@ -269,15 +308,17 @@
                                 <div class="activity">🍜 昼食</div>
                                 <div class="activity">💻 授業</div>
                                 <div class="activity">🍖 BBQ</div>
+                                <div class="activity">🌙 班長会議・就寝準備</div>
                             </td>
                             <td class="schedule-detail schedule-note">
                                 <div class="note-item">各班で協力して起床</div>
                                 <div class="note-item">班ごとに食事</div>
                                 <div class="note-item">全体での朝の活動</div>
                                 <div class="note-item">白黒画像のカラー化を学習</div>
-                                <div class="note-item">お弁当を教室で</div>
+                                <div class="note-item">カレーを教室で</div>
                                 <div class="note-item">カラー化精度向上に挑戦<br>14:00～研修室4使用可能</div>
-                                <div class="note-item">座席は自由<br>コミュニケーションを楽しもう<br>班長会議は21:00～</div>
+                                <div class="note-item">コミュニケーションを楽しもう<br>班長会議は21:00～</div>
+                                <div class="note-item">班長会議は21:00～<br>自由時間・質問対応可能</div>
                             </td>
                         </tr>
                         <tr class="schedule-row tab-content" id="schedule-day3">
@@ -460,11 +501,23 @@
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="item11" data-item="item11">
-                        <label for="item11">🥤 水筒（持参推奨）</label>
+                        <label for="item11">🥤 水筒</label>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="item12" data-item="item12">
                         <label for="item12">📱 スマートフォン（連絡用）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item13" data-item="item13">
+                        <label for="item13">💰 お金（自動販売機があるので、交通費以外に用意していただいても大丈夫）</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item14" data-item="item14">
+                        <label for="item14">☂️ 折りたたみ傘</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="item15" data-item="item15">
+                        <label for="item15">🥿 スリッパや上履きなど（任意）</label>
                     </div>
                 </div>
                 
@@ -524,8 +577,27 @@
                                 <input type="checkbox" id="item12-mobile" data-item="item12">
                                 <label for="item12-mobile">📱 スマートフォン（連絡用）</label>
                             </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item13-mobile" data-item="item13">
+                                <label for="item13-mobile">💰 お金（自動販売機があるので、交通費以外に用意していただいても大丈夫）</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item14-mobile" data-item="item14">
+                                <label for="item14-mobile">☂️ 折りたたみ傘</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="item15-mobile" data-item="item15">
+                                <label for="item15-mobile">🥿 スリッパや上履きなど（任意）</label>
+                            </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="drink-notice">
+                    <p class="section-note">
+                        💧 <strong>飲み物について</strong><br>
+                        こちらでペットボトルの水またはお茶を配布しますのでご安心ください。
+                    </p>
                 </div>
             </div>
         </section>
