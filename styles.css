@@ -637,6 +637,35 @@ a {
   padding: 10px;
 }
 
+.line-link {
+  margin: 0;
+  text-align: center;
+}
+
+.line-link a {
+  color: #06C755;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid #06C755;
+  border-radius: 8px;
+  background-color: rgba(6, 199, 85, 0.1);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.line-link a:hover {
+  background-color: #06C755;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
+}
+
+.line-link a:active {
+  transform: translateY(0);
+}
+
 .line-text-section {
   text-align: center;
 }
@@ -2196,6 +2225,11 @@ a {
     height: 180px;
   }
   
+  .line-link a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
   .line-account-name {
     font-size: 1.2rem;
   }
@@ -2743,6 +2777,11 @@ a {
   .line-qr-code {
     width: 160px;
     height: 160px;
+  }
+  
+  .line-link a {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.7rem;
   }
   
   .line-account-name {
