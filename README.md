@@ -1,7 +1,6 @@
 # BeEngineer Programming Camp Website 🍁
 
 ロゴスランド風デザインのBeEngineer合宿案内Webページ
-【BeEngineer合宿用Webページ（アーカイブ）】
 
 ## 📋 概要
 
