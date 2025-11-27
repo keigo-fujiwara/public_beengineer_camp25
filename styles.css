@@ -563,165 +563,6 @@ a {
   font-weight: 500;
 }
 
-.line-info-box {
-  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-  border: 3px solid #06C755;
-  border-radius: var(--border-radius);
-  padding: 0;
-  margin-top: 2rem;
-  box-shadow: 0 6px 25px rgba(6, 199, 85, 0.15);
-  overflow: hidden;
-}
-
-/* 開閉ヘッダー */
-.line-toggle-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.line-toggle-header:hover {
-  background-color: rgba(6, 199, 85, 0.1);
-}
-
-.line-toggle-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #06C755;
-}
-
-.line-toggle-icon {
-  font-size: 1.2rem;
-  color: #06C755;
-  transition: transform 0.3s ease;
-}
-
-.line-info-box.active .line-toggle-icon {
-  transform: rotate(180deg);
-}
-
-.line-info-content-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
-  padding: 0 2rem;
-}
-
-.line-info-box.active .line-info-content-wrapper {
-  max-height: 1500px;
-  opacity: 1;
-  padding: 0 2rem 2rem 2rem;
-}
-
-.line-info-title {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #06C755;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
-
-.line-info-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.line-character {
-  flex-shrink: 0;
-}
-
-.line-character-img {
-  width: 120px;
-  height: auto;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.line-character-left .line-character-img {
-  animation-delay: 0s;
-}
-
-.line-character-right .line-character-img {
-  animation-delay: 0.3s;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.line-qr-section {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.line-qr-code {
-  width: 200px;
-  height: 200px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background: white;
-  padding: 10px;
-}
-
-.line-link {
-  margin: 0;
-  text-align: center;
-}
-
-.line-link a {
-  color: #06C755;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border: 2px solid #06C755;
-  border-radius: 8px;
-  background-color: rgba(6, 199, 85, 0.1);
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.line-link a:hover {
-  background-color: #06C755;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
-}
-
-.line-link a:active {
-  transform: translateY(0);
-}
-
-.line-text-section {
-  text-align: center;
-}
-
-.line-account-name {
-  font-size: 1.3rem;
-  color: #06C755;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.line-description {
-  font-size: 1.05rem;
-  color: var(--color-text);
-  line-height: 1.8;
-}
 
 /* ============================================
    ブログ更新セクション
@@ -1642,8 +1483,49 @@ a {
   text-decoration: underline;
 }
 
+.contact-card h3 a {
+  color: #66b3ff;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.contact-card h3 a:hover {
+  color: #4da6ff;
+  text-shadow: 0 0 8px rgba(102, 179, 255, 0.5);
+}
+
+.contact-logo a {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.contact-logo a:hover {
+  transform: scale(1.05);
+}
+
 .contact-card-emergency {
   background: linear-gradient(135deg, var(--color-primary) 0%, #12a876 100%);
+}
+
+.contact-card-beengineer {
+  background: linear-gradient(135deg, #0B7150 0%, #0a5d42 100%);
+}
+
+.contact-logo {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-logo-img {
+  width: 200px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .contact-note {
@@ -1704,6 +1586,15 @@ a {
   
   .footer-character-img {
     width: 70px;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -1935,11 +1826,36 @@ a {
 .blog-navigation {
   text-align: center;
   margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.blog-nav-link {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #ff9a5a 100%);
+  color: var(--color-white);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(244, 127, 46, 0.3);
+  text-decoration: none;
+}
+
+.blog-nav-link:hover {
+  background: linear-gradient(135deg, #ff9a5a 0%, var(--color-secondary) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(244, 127, 46, 0.4);
 }
 
 .back-to-home {
   display: inline-block;
-  margin: 2rem auto;
+  margin: 1rem auto 2rem;
   padding: 1rem 2rem;
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -1947,11 +1863,15 @@ a {
   font-weight: bold;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(14, 139, 98, 0.3);
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .back-to-home:hover {
   background-color: #0a6d4d;
   transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(14, 139, 98, 0.4);
 }
 
 /* ============================================
@@ -2420,86 +2340,6 @@ a {
     margin-top: 1.2rem;
   }
   
-  .line-info-box {
-    padding: 0;
-    margin-top: 1.5rem;
-    overflow: hidden;
-  }
-  
-  /* LINEボックスの開閉ヘッダー（SP版用のスタイル調整） */
-  .line-toggle-header {
-    padding: 1.2rem;
-    background: linear-gradient(135deg, #06C755 0%, #05a846 100%);
-    color: var(--color-white);
-  }
-  
-  .line-toggle-title {
-    font-size: 1.1rem;
-    color: var(--color-white);
-  }
-  
-  .line-toggle-icon {
-    color: var(--color-white);
-  }
-  
-  .line-toggle-icon {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .line-info-box.active .line-toggle-icon {
-    transform: rotate(180deg);
-  }
-  
-  .line-info-content-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-  }
-  
-  .line-info-box.active .line-info-content-wrapper {
-    max-height: 1500px;
-    opacity: 1;
-    padding: 1.5rem;
-  }
-  
-  .line-info-title {
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .line-info-content {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  
-  .line-character {
-    display: none;
-  }
-  
-  .line-qr-section {
-    gap: 1.2rem;
-  }
-  
-  .line-qr-code {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .line-link a {
-    font-size: 1rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .line-account-name {
-    font-size: 1.2rem;
-  }
-  
-  .line-description {
-    font-size: 1rem;
-  }
-  
   /* 開催情報バーをSP版で2列横並びに */
   .overview-section {
     padding: 2rem 1rem;
@@ -2846,6 +2686,23 @@ a {
     grid-template-columns: 1fr;
   }
   
+  /* ブログナビゲーション（SP版） */
+  .blog-navigation {
+    gap: 0.8rem;
+  }
+  
+  .blog-nav-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 140px;
+  }
+  
+  .back-to-home {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.95rem;
+  }
+  
   /* 追伸セクション（SP版） */
   .postscript-content {
     flex-direction: column;
@@ -3022,58 +2879,6 @@ a {
   .guide-notice-inline {
     padding: 1rem;
     margin-top: 1rem;
-  }
-  
-  .line-info-box {
-    padding: 0;
-    margin-top: 1.2rem;
-  }
-  
-  .line-toggle-header {
-    padding: 1rem;
-  }
-  
-  .line-toggle-title {
-    font-size: 1rem;
-  }
-  
-  .line-toggle-icon {
-    font-size: 1.1rem;
-  }
-  
-  .line-info-box.active .line-info-content-wrapper {
-    padding: 1.2rem;
-  }
-  
-  .line-info-title {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .line-character {
-    display: none;
-  }
-  
-  .line-qr-section {
-    gap: 1rem;
-  }
-  
-  .line-qr-code {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .line-link a {
-    font-size: 0.9rem;
-    padding: 0.35rem 0.7rem;
-  }
-  
-  .line-account-name {
-    font-size: 1.1rem;
-  }
-  
-  .line-description {
-    font-size: 0.95rem;
   }
   
   /* 開催情報バーをさらにコンパクトに */
